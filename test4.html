@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="css/style4.css">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <h1 class="pulll_left">医疗数据可视化</h1>
+			<div class="menu menu2 pulll_left">
+				<ul>     
+					<li class="nav_active"><i class="nav_1"></i><a href="index.html">主页</a> </li>
+					<li><i class="nav_2"></i><a href="test2.html">硬件器材</a> </li>
+					<li><i class="nav_3"></i><a href="test3.html">常见病型</a> </li>
+					<li><i class="nav_4"></i><a href="test4.html">医疗保险</a> </li>
+				</ul>
+			</div>
+			<div class="time" id="showTime"></div>
+			<script>
+					var t = null;
+					t = setTimeout(time,1000);//开始运行
+					function time()
+					{
+						clearTimeout(t);//清除定时器
+						dt = new Date();
+						var y=dt.getFullYear();
+						var mt=dt.getMonth()+1;
+						var day=dt.getDate();
+						var h=dt.getHours();//获取时
+						var m=dt.getMinutes();//获取分
+						var s=dt.getSeconds();//获取秒
+						document.getElementById("showTime").innerHTML = y+"年"+mt+"月"+day+"日—"+h+"时"+m+"分"+s+"秒";
+						t = setTimeout(time,1000); //设定定时器，循环运行    
+					} 
+
+			</script>
+    </header>
+	<section>
+		<div class="mainbox">
+			<div class="column">
+				<ul class="rel">
+					<li><a id="a1">国家政策</a></li>
+					<br><br>
+					<li><a id="a2">保险类型</a></li>
+					<br><br>
+					<li><a id="a3">数据统计</a></li>
+					<br><br>
+					<li><a id="a4">参保人数</a></li>
+					<br><br>
+					<li><a id="a5">电子医保</a></li>
+				</ul>
+			</div>
+			<div class="column" id="main">
+				<div class="box1">
+					<h3>法律法规及相关规定</h3>
+					<br>
+					<ul>
+						<li><a href="http://www.nhsa.gov.cn/art/2023/9/1/art_175_11206.html">《社会保险经办条例》</a></li>
+						<li><a href="http://www.nhsa.gov.cn/art/2020/7/31/art_173_10977.html">《基本医疗保险用药管理暂行办法》</a></li>
+						<li><a href="http://www.nhsa.gov.cn/art/2021/1/8/art_173_10987.html">《医疗机构医疗保障定点管理暂行办法》</a></li>
+						<li><a href="http://www.nhsa.gov.cn/art/2021/6/11/art_173_10989.html">《医疗保障行政处罚程序暂行规定》</a></li>
+						<li><a href="http://www.nhsa.gov.cn/art/2021/1/8/art_173_10988.html">《零售药店医疗保障定点管理暂行办法》</a></li>
+						<li><a href="http://www.nhsa.gov.cn/art/2022/1/29/art_173_10990.html">《医疗保障基金使用监督管理举报处理暂行办法》</a></li>
+						<li><a href="http://www.nhsa.gov.cn/art/2023/3/14/art_173_10991.html">《医疗保障基金飞行检查管理暂行办法》</a></li>
+					</ul>
+				</div>
+				<div class="box2">
+					<a href="http://www.nhsa.gov.cn/col/col164/index.html">
+						<img src="images/c1.png" alt="">
+					</a><a href="https://www.gov.cn/zhengce/zczhjd/">
+						<img src="images/c3.jpg" alt="">
+					<a href="http://www.nhsa.gov.cn/col/col157/index.html">
+						<img src="images/c2.png" alt="">
+				</div>
+			</div>
+			<div class="column"></div>
+
+		</div>
+	</section>
+	<script src="js/echarts.min.js"></script>
+	<script src="js/echarts-wordcloud.min.js"></script>
+    <script src="js/jquery.js"></script>
+	<script src="js/js4.js"></script>
+</body>
+</html>

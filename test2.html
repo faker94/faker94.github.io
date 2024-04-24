@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style2.css">
+    <style>
+    
+		button {  
+            padding: 10px 20px; /* 内边距 */  
+            font-size: 16px; /* 字体大小 */  
+            border-radius: 5px; /* 边框圆角 */  
+            border: none; /* 无边框 */  
+            background-color: #4CAF50; /* 背景颜色 */  
+            color: white; /* 字体颜色 */  
+            cursor: pointer; /* 鼠标悬停时变为小手 */  
+            transition: background-color 0.3s ease; /* 过渡效果 */  
+            margin-right: 10px; /* 右边距 */  
+        }  
+		.button-group {  
+        display: flex;  
+        justify-content: center; /* 水平居中 */  
+        align-items: center; /* 如果需要垂直居中，可以启用这行代码 */  
+        margin-bottom: 20px; /* 按钮组与下方容器的间距 */  
+    }  
+  
+    /* 设置按钮之间的间距 */  
+    .button-group button {  
+        margin: 0 10px; /* 左右各10px的间距 */  
+    }  
+  
+    </style>
+</head>
+<body>
+    <header>
+        <h1 class="pull_left">医疗数据可视化</h1>
+        <div class="menu menu2 pull_left">
+            <ul>
+                <li class="nav_active"><i class="nav_1"></i><a href="index.html">主页</a></li>
+                <li><i class="nav_2"></i><a href="test2.html">硬件器材</a></li>
+                <li><i class="nav_3"></i><a href="test3.html">常见病型</a></li>
+                <li><i class="nav_4"></i><a href="test4.html">医疗保险</a></li>
+            </ul>
+        </div>
+        <div class="time" id="showTime"></div>
+        <script>
+            var t = null;
+            t = setTimeout(time, 1000);
+            function time() {
+                clearTimeout(t);
+                dt = new Date();
+                var y = dt.getFullYear();
+                var mt = dt.getMonth() + 1;
+                var day = dt.getDate();
+                var h = dt.getHours();
+                var m = dt.getMinutes();
+                var s = dt.getSeconds();
+                document.getElementById("showTime").innerHTML = y + "年" + mt + "月" + day + "日—" + h + "时" + m + "分" + s + "秒";
+                t = setTimeout(time, 1000);
+            }
+        </script>
+    </header>
+    <section>
+		<div class="button-group">  
+			<button id="a1">质量性和安全性统一</button>  
+			<button id="a2">产品分类和使用情况</button>  
+			<button id="a3">市场需求和趋势分析</button>  
+			<button id="a4">研发性和创新型统计</button>  
+			<button id="a5">医疗器材与使用问题</button> 
+		</div> 
+		 
+        <div class="container-wrapper">  
+			<div id="main">  
+			  <!-- 第一个容器的内容 -->  
+			</div>  
+			<div id="right-containers">  
+			  <div id="main1">  
+				<!-- 第二个容器的内容，也可以使用id="container1" -->  
+			  </div>  
+			  <div id="main2">  
+				<!-- 第三个容器的内容，也可以使用id="container2" -->  
+			  </div>  
+			</div>  
+		  </div>
+    </section>
+    <script src="js/echarts.min.js"></script>
+    <script src="js/jquery.js"></script>
+    <script src="js/js2.js"></script>
+</body>
+</html>
